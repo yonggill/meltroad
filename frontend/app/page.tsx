@@ -2,7 +2,8 @@ import ExpertArea from "@/components/ExpertArea";
 import Posts from "@/components/posts";
 import WorkExperience from "@/components/LifeExperience";
 import MeltRoadLayout from "@/layout/MeltRoadLayout";
-const page = () => {
+
+export default function Page() {
   return (
     <MeltRoadLayout homePage={true}>
       <div className="col-xl-9">
@@ -18,8 +19,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      
     </MeltRoadLayout>
   );
 };
-export default page;

@@ -1,6 +1,6 @@
 "use client";
 import ClipboardJS from "clipboard";
-import Image from "next/image";
+import Image from 'react-bootstrap/Image';
 import { useEffect, useState } from "react";
 
 const ProfileCard = () => {
@@ -28,7 +28,7 @@ const ProfileCard = () => {
     <div className="card profile-card">
       <div className="card-body">
         <div className="image text-center position-relative">
-          <Image width={0} height={0} className="w-full h-auto" sizes={"100vw"} src="/assets/img/images/profile.png" alt="profile" />
+          <Image fluid src="/assets/img/images/profile.png" alt="profile" />
         </div>
         <div className="text">
           <h3 className="card-title">Yonggill Lee 👋</h3>
