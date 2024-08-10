@@ -1,3 +1,4 @@
+import Image from "next/image";
 const Experience = () => {
   const experiancesItems = [
     {
@@ -31,7 +32,7 @@ const Experience = () => {
           </div>
           <div className="info col-lg-10">
             <div className="icon">
-              <img src={item.icon} alt="adobe" />
+              <Image  width={0} height={0} className="w-full h-auto" sizes={"100vw"} src={item.icon} alt="adobe" />
             </div>
             <div className="text">
               <h4 className="title">{item.title}</h4>

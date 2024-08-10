@@ -1,3 +1,4 @@
+import Image from "next/image";
 const ExpertArea = () => {
   const expertItems = [
     { id: 1, icon: "assets/img/icons/python.svg", name: "Python" },
@@ -17,7 +18,7 @@ const ExpertArea = () => {
               <div className="col-xl-4 col-md-4 col-sm-6 col-6" key={item.id}>
                 <div className="expertise-item">
                   <div className="image text-center">
-                    <img src={item.icon} alt={item.name} />
+                    <Image  width={0} height={0} className="w-full h-auto d-inline" sizes={"100vw"} src={item.icon} alt={item.name} />
                   </div>
                   <div className="text">
                     <h4 className="title">{item.name}</h4>

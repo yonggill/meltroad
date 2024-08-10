@@ -9,8 +9,8 @@ const Header = () => {
     bentofolioUtility.imgToSVG();
   }, []);
   const currentPath = usePathname();
-  const activeMenuFuntion = (value) => {
-    return value.some((el) => currentPath.includes(el)) ? "active" : "";
+  const activeMenuFuntion = (value:any) => {
+    return value.some((el:any) => currentPath.includes(el)) ? "active" : "";
   };
 
   const menus = [
@@ -39,9 +39,10 @@ const Header = () => {
 
   /** Day and night mood toggle */
   useEffect(() => {
-    const darkMode = JSON.parse(localStorage.getItem("darkMode"));
+
+    const darkMode = JSON.parse(localStorage.getItem("darkMode") || '{}');
     if (darkMode) {
-      document.querySelector("body").classList.add("dark-theme");
+      document.querySelector("body")!.classList.add("dark-theme");
     }
   }, []);
 
@@ -120,17 +121,19 @@ const Header = () => {
                   className="theme-control-btn"
                   onClick={() => {
                     const dark = document
-                      .querySelector("body")
+                      .querySelector("body")!
                       .classList.contains("dark-theme");
                     if (!dark) {
                       document
-                        .querySelector("body")
+                        .querySelector("body")!
                         .classList.add("dark-theme");
-                      localStorage.setItem("darkMode", !dark);
+                      // @ts-ignore
+                        localStorage.setItem("darkMode", !dark);
                     } else {
                       document
-                        .querySelector("body")
+                        .querySelector("body")!
                         .classList.remove("dark-theme");
+                      // @ts-ignore
                       localStorage.setItem("darkMode", !dark);
                     }
                   }}

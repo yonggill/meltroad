@@ -1,6 +1,7 @@
 "use client";
 import { sliderProps } from "@/utility/sliderProps";
 import Link from "next/link";
+import Image from "next/image";
 import Slider from "react-slick";
 const BlogSlider = () => {
   const blogItems = [
@@ -42,8 +43,9 @@ const BlogSlider = () => {
               <div className="article-publications-item">
                 <div className="image">
                   <Link href="article" className="d-block w-100">
-                    <img
+                    <Image
                       src={item.img}
+                      width={"100%"}
                       alt="blog-img-1"
                       className="img-fluid w-100"
                     />

@@ -3,8 +3,9 @@ import Shape from "@/components/Shape";
 import ImageView from "@/components/popup/ImageView";
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
-import { Fragment } from "react";
-const MeltRoadLayout = ({ children, homePage = false }) => {
+import {Fragment} from "react";
+
+const MeltRoadLayout = ({ children, homePage=false }:{children:any, homePage?:boolean}) => {
   return (
     <Fragment>
       <ImageView />

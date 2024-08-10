@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Posts = () => {
   const postItems = [
@@ -58,10 +59,11 @@ const Posts = () => {
               <div className="col-lg-12" key={item.id}>
                 <div className="project-item">
                   <div className="image">
-                    <img
+                    <Image
+                      width={0} height={0} sizes={"100vw"}
                       src={item.img}
                       alt="project-1"
-                      className="img-fluid w-100"
+                      className="img-fluid w-100 h-auto"
                     />
                     <a
                       href={item.img}

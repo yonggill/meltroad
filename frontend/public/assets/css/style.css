@@ -29,6 +29,7 @@
 	01. Variable CSS start
 ===============================*/
 
+
 :root {
   --font-family: "Bricolage Grotesque", sans-serif;
   --primary: #4770ff;
@@ -2717,3 +2718,4 @@ p {
   background-color: var(--primary);
   color: var(--white);
 }
+

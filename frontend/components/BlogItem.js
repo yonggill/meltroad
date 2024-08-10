@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const BlogItem = ({ item }) => {
   return (
@@ -6,7 +7,7 @@ const BlogItem = ({ item }) => {
       <div className="article-publications-item">
         <div className="image">
           <Link href="article" className="d-block w-100">
-            <img src={item.img} alt="blog-img-1" className="img-fluid w-100" />
+            <Image src={item.img} alt="blog-img-1" className="img-fluid w-100" />
           </Link>
           <Link href="article" className="tags">
             {item.category}

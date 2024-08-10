@@ -1,3 +1,4 @@
+import Image from "next/image";
 const Brands = () => {
   const brandItems = [
     { id: 1, icon: "assets/img/icons/notion.svg", name: "Notion" },
@@ -25,7 +26,7 @@ const Brands = () => {
       <div className="working-with-main">
         {brandItems.map((item) => (
           <div className="items" key={item.id}>
-            <img src={item.icon} alt={item.name} />
+            <Image src={item.icon} alt={item.name} />
           </div>
         ))}
       </div>

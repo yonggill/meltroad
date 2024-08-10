@@ -32,7 +32,7 @@ const page = () => {
                           <label className="form-label">Name</label>
                           <input
                             name="name"
-                            required="required"
+                            required
                             type="text"
                             className="form-control shadow-none"
                             placeholder="성함을 넣어주세요."
@@ -44,7 +44,7 @@ const page = () => {
                           <label className="form-label">Email</label>
                           <input
                             name="email"
-                            required="required"
+                            required
                             type="email"
                             className="form-control shadow-none"
                             placeholder="이메일 주소를 넣어주세요."
@@ -98,7 +98,7 @@ const page = () => {
               <div className="contact-map-area">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.258131890527!2d127.03674887651599!3d37.50182957205547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbca16448f109%3A0x762757a59467561c!2z7JyE7Iuc7LyT!5e0!3m2!1sko!2skr!4v1723290774710!5m2!1sko!2skr"
-                  allowFullScreen=""
+                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
