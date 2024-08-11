@@ -1,5 +1,7 @@
 from django.db import models
 from rest_framework import serializers
+
+from meltroad_backend.category.models import CategoryOnlySerializer
 from meltroad_backend.image.models import PostImageSerializer
 # Create your models here.
 
@@ -19,6 +21,7 @@ class Post(models.Model):
 
 
 class PostSerializer(serializers.ModelSerializer):
+    category = CategoryOnlySerializer()
     images = PostImageSerializer(many=True, read_only=True)
 
     class Meta:
