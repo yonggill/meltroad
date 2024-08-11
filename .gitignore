@@ -2,3 +2,5 @@ backend/.idea
 backend/__pycache__
 **/__pycache__
 frontend/package-lock.json
+**/.python-version
+backend/.python-version
