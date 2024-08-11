@@ -1,6 +1,6 @@
 from django.db import models
 from rest_framework import serializers
-
+from meltroad_backend.image.models import PostImageSerializer
 # Create your models here.
 
 class Post(models.Model):
@@ -14,10 +14,8 @@ class Post(models.Model):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    meta_image_url = serializers.SerializerMethodField()
+    images = PostImageSerializer(many=True, read_only=True)
+
     class Meta:
         model = Post
         fields = '__all__'
-
-    def get_meta_image_url(self, obj):
-        return f"/{obj.meta_image.name}"
