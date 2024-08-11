@@ -9,6 +9,7 @@ class Category(models.Model):
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    
 
     class Meta:
         model = Category

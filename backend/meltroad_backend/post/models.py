@@ -21,7 +21,7 @@ class Post(models.Model):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    category = CategoryOnlySerializer()
+    category = CategoryOnlySerializer(read_only=True)
     images = PostImageSerializer(many=True, read_only=True)
 
     class Meta:
