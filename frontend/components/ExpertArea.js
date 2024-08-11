@@ -12,7 +12,7 @@ const ExpertArea = () => {
     <div className="card expertise-card">
       <div className="card-body">
         <h3 className="card-title">My Expert Area</h3>
-        <div className="expertise-main mt-24">
+        <div className="expertise-main mt-4">
           <div className="row g-3">
             {expertItems.map((item) => (
               <div className="col-xl-4 col-md-4 col-sm-6 col-6" key={item.id}>

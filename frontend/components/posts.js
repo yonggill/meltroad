@@ -4,20 +4,18 @@ import Image from "next/image";
 
 export default async function Posts() {
 
-  const data = await fetch(process.env.API_HOST + '/posts').then((res) =>
+  var data = await fetch(process.env.API_HOST + '/posts').then((res) =>
     res.json()
   )
-  console.log(data)
-
   return (
       <div className="card card-projects">
         <div className="card-body">
           <h3 className="card-title">
             Recent Posts{" "}
             <Link className="link-btn" href="/posts">
-              All Projects
+              All Posts
               <svg
-                className="icon"
+                className="icon d-inline-block"
                 width={20}
                 height={20}
                 viewBox="0 0 20 20"
@@ -48,38 +46,35 @@ export default async function Posts() {
               </svg>
             </Link>
           </h3>
-          <div className="projects-main mt-24">
+          <div className="projects-main mt-4">
             <div className="row g-4 parent-container">
               {data.map((item) => (
-                <div className="col-lg-12" key={item.id}>
-                  <div className="project-item">
+                <div className="col-lg-6" key={item.id}>
+                  <div className="article-publications-item">
                     <div className="image">
-                      <Image
-                        width={0} height={0} sizes={"100vw"}
-                        src={item.meta_image_url}
-                        alt="project-1"
-                        className="img-fluid w-100 h-auto"
-                      />
-                      <a
-                        href={item.meta_image_url}
-                        className="gallery-popup full-image-preview parent-container"
-                      >
-                        <svg
-                          className="icon"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="1.5"
-                        >
-                          <path d="M10 4.167v11.666M4.167 10h11.666" />
-                        </svg>
-                      </a>
-                      <div className="info">
-                        <span className="category">{item.category}</span>
-                      </div>
+                      <Link href={"/posts/" + item.id} className="d-block w-100 flex align-content-center justify-content-center">
+                        <Image
+                          width={0} height={0} sizes={"100vw"}
+                          src={item.meta_image}
+                          className="img-fluid w-100 h-auto"
+                          alt="blog-img-1"
+                        />
+                      </Link>
+                      <Link href="article" className="tags">
+                        {item.category?item.category:" "}
+                      </Link>
+                    </div>
+                    <div className="text">
+                      <Link href={"/posts/" + item.id} className="title">
+                        {item.title}
+                      </Link>
+                      <p className="line-clamp-4">
+                        {item.meta_description}
+                      </p>
+                      <ul className="list-unstyled">
+                        <li>{item.reading_minutes} min read</li>
+                        <li>{item.date_published}</li>
+                      </ul>
                     </div>
                   </div>
                 </div>

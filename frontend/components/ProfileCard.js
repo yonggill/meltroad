@@ -40,7 +40,7 @@ const ProfileCard = () => {
           <div className="common-button-groups">
             <a className="btn btn-call w-100 mb-2" href="/contact">
               <svg
-                className="icon"
+                className="icon d-inline-block"
                 width={25}
                 height={24}
                 viewBox="0 0 25 24"
@@ -77,7 +77,7 @@ const ProfileCard = () => {
               onClick={() => toggleBtn()}
             >
               <svg
-                className="icon"
+                className="icon  d-inline-block"
                 width={24}
                 height={24}
                 viewBox="0 0 24 24"

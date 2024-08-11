@@ -208,7 +208,7 @@ const Header = () => {
                 <Link href="contact" className="lets-talk-btn">
                   Let's Talk
                   <svg
-                    className="icon"
+                    className="icon d-inline-block"
                     width={20}
                     height={20}
                     viewBox="0 0 20 20"
