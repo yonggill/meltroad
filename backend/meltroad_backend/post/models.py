@@ -7,7 +7,7 @@ from meltroad_backend.image.models import PostImageSerializer
 
 
 def upload_post_meta_image(instance, filename):
-    return f"post/{instance.post.id}/meta-img-{filename}"
+    return f"post/{instance.id}/meta-img-{filename}"
 
 class Post(models.Model):
     title = models.CharField(max_length=100, default="")
