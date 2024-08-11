@@ -7,7 +7,7 @@ class PostImage(models.Model):
     image_file = models.ImageField()
 
 
-class PostImageSerializer(models.Model):
+class PostImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostImage
         fields = '__all__'
