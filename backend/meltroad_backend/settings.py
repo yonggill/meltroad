@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'meltroad_backend.comment',
     'meltroad_backend.post',
     'meltroad_backend.image',
+    'meltroad_backend.category',
 ]
 
 MIDDLEWARE = [

@@ -1,4 +1,5 @@
 import MeltRoadLayout from "@/layout/MeltRoadLayout";
+import "@css/content.css";
 
 export default async function page({ params }: { params: { id: number } }) {
   var postData = await fetch(process.env.API_HOST + '/posts/' + params.id).then((res) =>

@@ -10,6 +10,7 @@ def upload_post_meta_image(instance, filename):
 class Post(models.Model):
     title = models.CharField(max_length=100, default="")
     slug = models.CharField(max_length=100, default="")
+    category = models.ForeignKey('category.Category', related_name="posts", null=True, blank=True, on_delete=models.CASCADE)
     content = models.TextField()
     meta_description = models.CharField(max_length=200)
     meta_image = models.ImageField(upload_to=upload_post_meta_image)
