@@ -130,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
-MEDIA_ROOT = normpath(join(DJANGO_ROOT, "assets/media"))
+MEDIA_ROOT = os.path.join("/www/", "media")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
