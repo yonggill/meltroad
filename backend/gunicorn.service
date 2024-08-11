@@ -1,0 +1,17 @@
+[Unit]
+Description=Gunicorn instance to serve application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/meltroad/backend
+Environment="PATH=/home/ubuntu/.pyenv/shims/"
+ExecStart=/home/ubuntu/.pyenv/shims/gunicorn -c gunicorn.py meltroad_backend.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
