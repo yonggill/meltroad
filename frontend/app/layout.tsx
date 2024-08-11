@@ -3,6 +3,7 @@ import "@css/magnific-popup.css";
 import "@css/slick.css";
 import "@css/style.css";
 import "@css/responsive.css";
+import "@css/tailwind.css"
 import "@fontawsome/css/all.min.css";
 import "@fontawsome/css/fontawesome.min.css";
 import { Inter } from "next/font/google";
