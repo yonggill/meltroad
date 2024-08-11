@@ -14,6 +14,10 @@ class Post(models.Model):
 
 
 class PostSerializer(serializers.ModelSerializer):
+    meta_image_url = serializers.SerializerMethodField()
     class Meta:
         model = Post
         fields = '__all__'
+
+    def get_meta_image_url(self, obj):
+        return f"/{obj.meta_image.name}"

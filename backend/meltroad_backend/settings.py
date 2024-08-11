@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent
 SECRET_KEY = 'django-insecure-uucy71oyv2hve6o!72_y0*^2iq4df4jm20v80qhb&&ov9!&z$-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ["IS_DJANGO_DEBUG"]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["api.yong-yong.net", "localhost"]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Application definition
@@ -85,7 +85,7 @@ DATABASES = {
         "NAME": "meltroad",
         "USER": "meltroad",
         "PASSWORD": "nicegame14",
-        "HOST": "backend-db",
+        "HOST": os.environ["DATABASE_HOST"],
         "PORT": "3306",
         "TEST": {  # redundant but explicit!
             "NAME": "meltroadtest",

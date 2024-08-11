@@ -52,17 +52,6 @@ const page = () => {
                         </div>
                       </div>
                       <div className="col-md-12">
-                        <div className="mb-4">
-                          <label className="form-label">Comment</label>
-                          <textarea
-                            name="message"
-                            className="form-control shadow-none"
-                            rows={4}
-                            placeholder="만날 수 있는 시간을 범위로 기재해주세요."
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-12">
                         <button className="submit-btn" type="submit">
                           Send Message
                           <svg
