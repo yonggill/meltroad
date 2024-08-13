@@ -1,6 +1,8 @@
 'use client';
+import React from "react";
 import MDEditor, { commands } from '@uiw/react-md-editor';
 import { ChangeEvent, useState } from 'react';
+import axios from "axios";
 
 /* Custom button in toolbar */
 const help = {
@@ -20,17 +22,53 @@ const help = {
     window.open('https://www.markdownguide.org/basic-syntax/', '_blank');
   },
 };
+interface PostProps {
+  title: string,
+  category_slug: string,
+  slug: string,
+  meta_description: string,
+  meta_image?: File,
+  date_published?: string
+}
 
 export default function Page() {
-  const [value, setValue] = useState<string | undefined>('# 타이틀');
+  const [post, setPost] = useState<PostProps>({title:"",category_slug:"",slug:"",meta_description:""});
+  const [content, setContent] = useState<string | undefined>("# 타이틀");
 
-  const handleChange = (
+
+  const handleEditorChange = (
     value?: string | undefined,
     // eslint-disable-next-line no-unused-vars
     event?: ChangeEvent<HTMLTextAreaElement> | undefined,
   ) => {
-    setValue(value);
+    setContent(value);
   };
+  const handlePropertyChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    let newState = {...post};
+    let {name, value} = e.target;
+    if(name == 'title' || name == 'category_slug' || name == 'meta_description' || name == 'slug' || name == 'date_published') {
+      newState[name] = value;
+      setPost(newState)
+    }
+  }
+  const handleMetaDescriptionChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+    let newState = {...post};
+    newState['meta_description'] = e.target.value;
+    setPost(newState)
+  }
+
+  const submitPost = () => {
+    axios.post('https://api.yong-yong.net/posts/', {
+      ...post,
+      content:content
+    })
+    .then(function(response) {
+      console.log(response)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
 
   return (
       <div className={"col-xl-12"}>
@@ -39,61 +77,60 @@ export default function Page() {
           <div className={"col-xl-3"}>
             <div className="card p-4">
               <form
-                id="contact-form"
-                action="https://api.yong-yong.net/contact/"
-                method="POST"
+                onSubmit={submitPost}
               >
                 <div className="row gx-3">
                   <div className="col-md-12">
                     <div className="mb-4">
-                      <label className="form-label">Name</label>
+                      <label className="form-label">제목</label>
                       <input
-                        name="name"
+                        name="title"
+                        value={post.title}
+                        onChange={handlePropertyChange}
                         required
                         type="text"
                         className="form-control shadow-none"
-                        placeholder="성함을 넣어주세요."
                       />
                     </div>
                   </div>
                   <div className="col-md-12">
                     <div className="mb-4">
-                      <label className="form-label">Email</label>
+                      <label className="form-label">URL slug</label>
                       <input
-                        name="email"
+                        name="slug"
                         required
-                        type="email"
+                        type="text"
                         className="form-control shadow-none"
-                        placeholder="이메일 주소를 넣어주세요."
+                        onChange={handlePropertyChange}
                       />
                     </div>
                   </div>
                   <div className="col-md-12">
-                    <button className="submit-btn" type="submit">
-                      Send Message
-                      <svg
-                        className="icon"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17.5 11.6665V6.6665H12.5"
-                          stroke="white"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M17.5 6.6665L10 14.1665L2.5 6.6665"
-                          stroke="white"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                    <div className="mb-4">
+                      <label className="form-label">카테고리</label>
+                      <input
+                        name="slug"
+                        required
+                        type="text"
+                        className="form-control shadow-none"
+                        onChange={handlePropertyChange}
+                        placeholder={"dev, startup, eat"}
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="mb-4">
+                      <label className="form-label">Meta Description</label>
+                      <textarea
+                        name="meta_description"
+                        className="form-control shadow-none"
+                        onChange={handleMetaDescriptionChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <button className="submit-btn btn-md" type="button">
+                      저장
                     </button>
                   </div>
                 </div>
@@ -104,9 +141,9 @@ export default function Page() {
             
               <MDEditor
                   className={""}
-                  value={value}
+                  value={content}
                   fullscreen={false}
-                  onChange={handleChange}
+                  onChange={handleEditorChange}
                   commands={[...commands.getCommands(), help]}
               />
             
