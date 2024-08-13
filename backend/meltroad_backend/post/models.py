@@ -17,7 +17,7 @@ class Post(models.Model):
     meta_description = models.CharField(max_length=200)
     meta_image = models.ImageField(upload_to=upload_post_meta_image, null=True)
     reading_minutes = models.IntegerField(default=0)
-    date_published = models.DateTimeField(null=True, blank=True)
+    date_published = models.DateField(null=True, blank=True)
 
 
 class PostSerializer(serializers.ModelSerializer):

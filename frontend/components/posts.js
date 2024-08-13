@@ -61,7 +61,7 @@ export default async function Posts() {
                         />
                       </Link>
                       <Link href="article" className="tags">
-                        {item.category?item.category:" "}
+                        {item.category?item.category.title:" "}
                       </Link>
                     </div>
                     <div className="text">

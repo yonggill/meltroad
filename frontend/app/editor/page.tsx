@@ -33,6 +33,7 @@ interface PostProps {
 
 export default function Page() {
   const [post, setPost] = useState<PostProps>({title:"",category_slug:"",slug:"",meta_description:""});
+  const [datePublished, setDatePublished] = useState<string|undefined>("");
   const [content, setContent] = useState<string | undefined>("# 타이틀");
 
 
@@ -73,7 +74,9 @@ export default function Page() {
         formData.append(key, post[key])
     }
     // @ts-ignore
-      formData.append('content', content)
+    formData.append('content', content)
+    // @ts-ignore
+    formData.append('date_published', datePublished)
     axios.post('https://api.yong-yong.net/posts/', formData)
     .then(function(response) {
       console.log(response)
@@ -129,6 +132,18 @@ export default function Page() {
                         onChange={handlePropertyChange}
                         placeholder={"dev, startup, eat"}
                       />
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="mb-4">
+                      <label className="form-label">게시일자</label>
+                      <input
+                        type={"text"}
+                        className="form-control shadow-none"
+                        name="date_published"
+                        onChange={(e) => setDatePublished(e.target.value)}
+                      />
+
                     </div>
                   </div>
                   <div className="col-md-12">
