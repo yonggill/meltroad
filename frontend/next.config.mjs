@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    esmExternals: 'loose',   /* For react-md-editor */
+  },
     images: {
         remotePatterns: [
           {
@@ -11,5 +14,6 @@ const nextConfig = {
         ],
       },
 };
+
 
 export default nextConfig;

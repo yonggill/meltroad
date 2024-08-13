@@ -23,7 +23,7 @@ const page = () => {
                 <div className="comments-box">
                   <form
                     id="contact-form"
-                    action="assets/mail.php"
+                    action="https://api.yong-yong.net/contact/"
                     method="POST"
                   >
                     <div className="row gx-3">

@@ -1,6 +1,7 @@
 import BlogItem from "@/components/BlogItem";
 import MeltRoadLayout from "@/layout/MeltRoadLayout";
-const page = () => {
+
+export default function page() {
   const blogItems = [
     {
       id: 1,
@@ -160,4 +161,3 @@ const page = () => {
     </MeltRoadLayout>
   );
 };
-export default page;
