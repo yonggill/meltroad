@@ -1,10 +1,14 @@
+"use client";
 import MeltRoadLayout from "@/layout/MeltRoadLayout";
 import "@css/content.css";
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import axios from "axios";
+import {useState, useEffect} from "react";
 
 type post = {
   id: number,
-  category: any,
-  images: [any],
+  category: any[],
+  images: [any[]],
   title: string,
   slug: string,
   content: string,
@@ -12,21 +16,25 @@ type post = {
   meta_image: string,
   reading_minutes: number,
   date_published: string
-}
+} | null;
 
-export default async function page({ params }: { params: { id: number } }) {
-  const postData:post = await fetch(process.env.API_HOST + '/posts/' + params.id).then((res) =>
-    res.json()
-  )
+export default function Page({ params }: { params: { id: number } }) {
+  const [post, setPost] = useState<post>(null);
+  useEffect(()=> {
+    fetch(process.env.NEXT_PUBLIC_API_HOST + '/posts/' + params.id + '/')
+    .then((res) => res.json())
+    .then((data) => setPost(data))
+  })
+
   return (
     <MeltRoadLayout>
       <div className="col-xl-9">
         <div className="card content-box-card">
           <div className="card-body portfolio-card article-details-card">
             <div className="article-details-area">
-              <h1 className="mb-8">{ postData.title }</h1>
+              <h1 className="mb-8">{ post?.title }</h1>
             </div>
-            <div className="article-details-area" dangerouslySetInnerHTML={{ __html: postData.content }}/>
+            <MarkdownPreview source={post?.content}/>
           </div>
         </div>
       </div>
