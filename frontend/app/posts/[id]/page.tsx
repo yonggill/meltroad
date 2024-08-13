@@ -24,7 +24,7 @@ export default function Page({ params }: { params: { id: number } }) {
     fetch(process.env.NEXT_PUBLIC_API_HOST + '/posts/' + params.id + '/')
     .then((res) => res.json())
     .then((data) => setPost(data))
-  })
+  }, [])
 
   return (
     <MeltRoadLayout>
