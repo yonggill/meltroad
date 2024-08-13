@@ -15,9 +15,9 @@ class Post(models.Model):
     category = models.ForeignKey('category.Category', related_name="posts", null=True, blank=True, on_delete=models.CASCADE)
     content = models.TextField()
     meta_description = models.CharField(max_length=200)
-    meta_image = models.ImageField(upload_to=upload_post_meta_image)
+    meta_image = models.ImageField(upload_to=upload_post_meta_image, null=True)
     reading_minutes = models.IntegerField(default=0)
-    date_published = models.DateTimeField()
+    date_published = models.DateTimeField(null=True, blank=True)
 
 
 class PostSerializer(serializers.ModelSerializer):

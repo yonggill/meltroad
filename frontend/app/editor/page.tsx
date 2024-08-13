@@ -57,11 +57,24 @@ export default function Page() {
     setPost(newState)
   }
 
-  const submitPost = () => {
-    axios.post('https://api.yong-yong.net/posts/', {
-      ...post,
-      content:content
-    })
+  const handleMetaImageChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    let newState = {...post};
+    if(e.target.files && e.target.files.length) {
+      newState['meta_image'] = e.target.files[0];
+      setPost(newState)
+    }
+  }
+
+  const submitPost = (e:React.FormEvent) => {
+    e.preventDefault();
+    let formData = new FormData();
+    for (var key in post) {
+      // @ts-ignore
+        formData.append(key, post[key])
+    }
+    // @ts-ignore
+      formData.append('content', content)
+    axios.post('https://api.yong-yong.net/posts/', formData)
     .then(function(response) {
       console.log(response)
     })
@@ -120,6 +133,18 @@ export default function Page() {
                   </div>
                   <div className="col-md-12">
                     <div className="mb-4">
+                      <label className="form-label">Meta 이미지</label>
+                      <input
+                        type='file'
+                        accept='image/jpeg,image/jpg,image/png,image/gif'
+                        name='meta_image'
+                        className="form-control shadow-none"
+                        onChange={handleMetaImageChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="mb-4">
                       <label className="form-label">Meta Description</label>
                       <textarea
                         name="meta_description"
@@ -129,7 +154,7 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="col-md-12">
-                    <button className="submit-btn btn-md" type="button">
+                    <button className="submit-btn btn-md" type="submit">
                       저장
                     </button>
                   </div>
