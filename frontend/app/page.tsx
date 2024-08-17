@@ -2,6 +2,7 @@ import ExpertArea from "@/components/ExpertArea";
 import Posts from "@/components/posts";
 import WorkExperience from "@/components/LifeExperience";
 import MeltRoadLayout from "@/layout/MeltRoadLayout";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
       <div className="col-xl-9">
         <Posts />
       </div>
+      <div className="col-xl-3"><ProfileCard /></div>
       <div className="col-xl-12">
         <div className="row g-4">
           <div className="col-lg-6">

@@ -3,9 +3,9 @@ import Shape from "@/components/Shape";
 import ImageView from "@/components/popup/ImageView";
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
-import {Fragment} from "react";
+import { Fragment } from "react";
 
-const MeltRoadLayout = ({ children, homePage=false }:{children:any, homePage?:boolean}) => {
+const MeltRoadLayout = ({ children, homePage = false }: { children: any, homePage?: boolean }) => {
   return (
     <Fragment>
       <ImageView />
@@ -17,10 +17,8 @@ const MeltRoadLayout = ({ children, homePage=false }:{children:any, homePage?:bo
         <section className={homePage ? "home-area" : "content-box-area mt-4"}>
           <div className="container">
             <div className="row g-4">
-              <div className="col-xl-3">
-                <ProfileCard />
-              </div>
               {children}
+              {homePage ? '' : <div className="col-xl-3"><ProfileCard /></div>}
             </div>
           </div>
         </section>

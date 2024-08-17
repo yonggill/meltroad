@@ -417,13 +417,13 @@ p {
 }
 
 .profile-card .image {
-  background-color: var(--background);
-  border-radius: 8px;
+  border-radius: 50%;
   overflow: hidden;
 }
 
 .profile-card .image img {
   margin-top: 10px;
+  display: inline-block;
 }
 
 .profile-card .text {
@@ -631,7 +631,7 @@ p {
   animation-play-state: paused;
 }
 
-.work-experiance-card .work-experiance-slider li + li {
+.work-experiance-card .work-experiance-slider li+li {
   margin-top: 16px;
 }
 
@@ -1012,12 +1012,7 @@ p {
   font-size: 14px;
 }
 
-.content-box-card
-  .client-feedback
-  .feedback-item
-  .feedback-top-info
-  .website
-  a {
+.content-box-card .client-feedback .feedback-item .feedback-top-info .website a {
   background-color: var(--white);
   font-size: 14px;
   font-weight: 400;
@@ -1026,34 +1021,17 @@ p {
   border-radius: 4px;
 }
 
-.content-box-card
-  .client-feedback
-  .feedback-item
-  .feedback-top-info
-  .website
-  a:hover {
+.content-box-card .client-feedback .feedback-item .feedback-top-info .website a:hover {
   background-color: var(--primary);
   color: var(--white);
 }
 
-.content-box-card
-  .client-feedback
-  .feedback-item
-  .feedback-top-info
-  .website
-  a
-  .arrow-up {
+.content-box-card .client-feedback .feedback-item .feedback-top-info .website a .arrow-up {
   stroke: var(--primary);
   margin-left: 5px;
 }
 
-.content-box-card
-  .client-feedback
-  .feedback-item
-  .feedback-top-info
-  .website
-  a:hover
-  .arrow-up {
+.content-box-card .client-feedback .feedback-item .feedback-top-info .website a:hover .arrow-up {
   stroke: var(--white);
 }
 
@@ -1112,7 +1090,7 @@ p {
   margin-top: 50px;
 }
 
-.content-box-card .awards-recognitions ul li + li {
+.content-box-card .awards-recognitions ul li+li {
   margin-top: 18px;
 }
 
@@ -1196,12 +1174,7 @@ p {
   transition: var(--transision);
 }
 
-.content-box-card
-  .awards-recognitions
-  .awards-item
-  .project-btn
-  span
-  .arrow-up {
+.content-box-card .awards-recognitions .awards-item .project-btn span .arrow-up {
   stroke: var(--black);
   margin-left: 4px;
 }
@@ -1216,12 +1189,7 @@ p {
   color: var(--primary);
 }
 
-.content-box-card
-  .awards-recognitions
-  .awards-item:hover
-  .project-btn
-  span
-  .arrow-up {
+.content-box-card .awards-recognitions .awards-item:hover .project-btn span .arrow-up {
   stroke: var(--primary);
 }
 
@@ -1465,9 +1433,7 @@ p {
   color: var(--light-black);
 }
 
-.content-box-card
-  .frequently-asked-questions
-  .accordion-button:not(.collapsed) {
+.content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) {
   background-color: transparent;
   box-shadow: none;
   color: var(--primary);
@@ -1483,26 +1449,15 @@ p {
   align-items: center;
 }
 
-.content-box-card
-  .frequently-asked-questions
-  .accordion-button:not(.collapsed)
-  .icon {
+.content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) .icon {
   background-color: var(--background);
 }
 
-.content-box-card
-  .frequently-asked-questions
-  .accordion-button:not(.collapsed)
-  .icon
-  .icon-plus {
+.content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) .icon .icon-plus {
   display: none;
 }
 
-.content-box-card
-  .frequently-asked-questions
-  .accordion-button:not(.collapsed)
-  .icon
-  .icon-minus {
+.content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) .icon .icon-minus {
   display: flex !important;
 }
 
@@ -1726,7 +1681,7 @@ p {
   flex: 0 0 auto;
 }
 
-.portfolio-details-text .short-info .info-item + .info-item {
+.portfolio-details-text .short-info .info-item+.info-item {
   margin-top: 18px;
 }
 
@@ -1983,13 +1938,7 @@ p {
   border-radius: 4px;
 }
 
-.article-details-area
-  .article-details-text
-  .tags-and-share
-  .tags
-  ul
-  li
-  a:hover {
+.article-details-area .article-details-text .tags-and-share .tags ul li a:hover {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   color: var(--white);
@@ -2269,13 +2218,7 @@ p {
   color: var(--dark-theme-light-white);
 }
 
-.dark-theme
-  .work-experiance-card
-  .work-experiance-slider
-  li
-  .info
-  .text
-  .title {
+.dark-theme .work-experiance-card .work-experiance-slider li .info .text .title {
   color: var(--dark-theme-light-white);
 }
 
@@ -2295,11 +2238,7 @@ p {
   display: none;
 }
 
-.dark-theme
-  .content-box-card
-  .counter-area
-  .circle-text
-  .circle-image.circle-image-light {
+.dark-theme .content-box-card .counter-area .circle-text .circle-image.circle-image-light {
   display: block !important;
 }
 
@@ -2339,13 +2278,7 @@ p {
   background-color: var(--dark-theme-black);
 }
 
-.dark-theme
-  .content-box-card
-  .client-feedback
-  .feedback-item
-  .top-info
-  .website
-  a {
+.dark-theme .content-box-card .client-feedback .feedback-item .top-info .website a {
   background-color: #000;
 }
 
@@ -2364,13 +2297,7 @@ p {
   color: var(--dark-theme-white);
 }
 
-.dark-theme
-  .content-box-card
-  .client-feedback
-  .feedback-item
-  .designation
-  p
-  span {
+.dark-theme .content-box-card .client-feedback .feedback-item .designation p span {
   color: var(--dark-theme-white);
 }
 
@@ -2383,12 +2310,7 @@ p {
   border-color: var(--primary);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item
-  .award-name
-  .icon {
+.dark-theme .content-box-card .awards-recognitions .awards-item .award-name .icon {
   background-color: #000;
 }
 
@@ -2396,72 +2318,33 @@ p {
   background-color: var(--dark-theme-black);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item
-  .project-btn
-  span {
+.dark-theme .content-box-card .awards-recognitions .awards-item .project-btn span {
   background-color: #000;
   color: rgba(240, 242, 245, 0.7);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item
-  .project-btn
-  span
-  .arrow-up {
+.dark-theme .content-box-card .awards-recognitions .awards-item .project-btn span .arrow-up {
   stroke: rgba(240, 242, 245, 0.7);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item:hover
-  .project-btn
-  span {
+.dark-theme .content-box-card .awards-recognitions .awards-item:hover .project-btn span {
   background-color: var(--dark-theme-black);
   color: var(--primary);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item:hover
-  .project-btn
-  span
-  .arrow-up {
+.dark-theme .content-box-card .awards-recognitions .awards-item:hover .project-btn span .arrow-up {
   stroke: var(--primary);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item
-  .award-name
-  .text
-  .title {
+.dark-theme .content-box-card .awards-recognitions .awards-item .award-name .text .title {
   color: var(--dark-theme-white);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item
-  .winner-tag
-  .title {
+.dark-theme .content-box-card .awards-recognitions .awards-item .winner-tag .title {
   color: var(--dark-theme-white);
 }
 
-.dark-theme
-  .content-box-card
-  .awards-recognitions
-  .awards-item
-  .winner-tag
-  .title
-  .icon {
+.dark-theme .content-box-card .awards-recognitions .awards-item .winner-tag .title .icon {
   stroke: var(--dark-theme-white);
 }
 
@@ -2509,18 +2392,11 @@ p {
   background-color: var(--dark-theme-black);
 }
 
-.dark-theme
-  .content-box-card
-  .frequently-asked-questions
-  .accordion-button:hover {
+.dark-theme .content-box-card .frequently-asked-questions .accordion-button:hover {
   color: var(--dark-theme-white);
 }
 
-.dark-theme
-  .content-box-card
-  .frequently-asked-questions
-  .accordion-button
-  .icon {
+.dark-theme .content-box-card .frequently-asked-questions .accordion-button .icon {
   background-color: #000;
 }
 
@@ -2532,19 +2408,12 @@ p {
   background-color: #000;
 }
 
-.dark-theme
-  .content-box-card
-  .frequently-asked-questions
-  .accordion-button:not(.collapsed) {
+.dark-theme .content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) {
   background-color: transparent;
   color: var(--primary);
 }
 
-.dark-theme
-  .content-box-card
-  .frequently-asked-questions
-  .accordion-button:not(.collapsed)
-  .icon {
+.dark-theme .content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) .icon {
   background-color: var(--dark-theme-black);
 }
 
@@ -2643,11 +2512,7 @@ p {
   color: #d1d5db;
 }
 
-.dark-theme
-  .article-details-area
-  .article-details-text
-  .listed-info
-  li::before {
+.dark-theme .article-details-area .article-details-text .listed-info li::before {
   background-color: #4b5563;
 }
 
@@ -2655,27 +2520,13 @@ p {
   color: var(--dark-theme-white);
 }
 
-.dark-theme
-  .article-details-area
-  .article-details-text
-  .tags-and-share
-  .tags
-  ul
-  li
-  a {
+.dark-theme .article-details-area .article-details-text .tags-and-share .tags ul li a {
   background-color: var(--dark-theme-black);
   border: 1px solid var(--dark-theme-black);
   color: var(--dark-theme-light-white);
 }
 
-.dark-theme
-  .article-details-area
-  .article-details-text
-  .tags-and-share
-  .tags
-  ul
-  li
-  a:hover {
+.dark-theme .article-details-area .article-details-text .tags-and-share .tags ul li a:hover {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   color: var(--white);
@@ -2719,4 +2570,3 @@ p {
   background-color: var(--primary);
   color: var(--white);
 }
-

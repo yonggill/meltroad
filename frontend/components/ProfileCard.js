@@ -28,7 +28,7 @@ const ProfileCard = () => {
     <div className="card profile-card">
       <div className="card-body">
         <div className="image text-center position-relative">
-          <Image fluid src="/assets/img/images/profile.png" alt="profile" />
+          <Image fluid src="/assets/img/images/yonggill.jpeg" alt="profile" />
         </div>
         <div className="text">
           <h3 className="card-title">Yonggill Lee 👋</h3>

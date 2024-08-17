@@ -9,8 +9,8 @@ const Header = () => {
     bentofolioUtility.imgToSVG();
   }, []);
   const currentPath = usePathname();
-  const activeMenuFuntion = (value:any) => {
-    return value.some((el:any) => currentPath.includes(el)) ? "active" : "";
+  const activeMenuFuntion = (value: any) => {
+    return value.some((el: any) => currentPath.includes(el)) ? "active" : "";
   };
 
   const menus = [
@@ -24,15 +24,15 @@ const Header = () => {
     {
       id: 2,
       title: "About",
-      href: "about",
+      href: "/about",
       activeUrlPath: ["about"],
       svg: "/assets/img/icons/about.svg",
     },
     {
       id: 3,
-      title: "Blog",
-      href: "blog",
-      activeUrlPath: ["blog", "article"],
+      title: "Post",
+      href: "/posts",
+      activeUrlPath: ["posts"],
       svg: "/assets/img/icons/blog.svg",
     },
   ];
@@ -40,7 +40,7 @@ const Header = () => {
   /** Day and night mood toggle */
   useEffect(() => {
 
-    const darkMode = JSON.parse(localStorage.getItem("darkMode") || '{}');
+    const { darkMode } = JSON.parse(localStorage.getItem("darkMode") || '{"darkMode": false}');
     if (darkMode) {
       document.querySelector("body")!.classList.add("dark-theme");
     }
@@ -68,14 +68,13 @@ const Header = () => {
                   />
                 </svg>
                 <span>
-                  yonggill<span className="primary">Lee</span>
+                  용 <span className="primary">블로그</span>
                 </span>
               </Link>
             </div>
             <div
-              className={`navbar-main d-flex flex-grow-1 ${
-                toggle ? "show" : ""
-              }`}
+              className={`navbar-main d-flex flex-grow-1 ${toggle ? "show" : ""
+                }`}
             >
               <div className="logo inner-logo d-block d-xl-none">
                 <Link className="navbar-brand me-0" href="/">
@@ -100,13 +99,12 @@ const Header = () => {
                 {menus.map((menu) => (
                   <li className={`nav-item`} key={menu.id}>
                     <Link
-                      className={`nav-link ${
-                        menu.href == "/"
-                          ? currentPath == "/"
-                            ? "active"
-                            : ""
-                          : activeMenuFuntion(menu.activeUrlPath)
-                      }`}
+                      className={`nav-link ${menu.href == "/"
+                        ? currentPath == "/"
+                          ? "active"
+                          : ""
+                        : activeMenuFuntion(menu.activeUrlPath)
+                        }`}
                       aria-current="page"
                       href={menu.href}
                     >
@@ -128,7 +126,7 @@ const Header = () => {
                         .querySelector("body")!
                         .classList.add("dark-theme");
                       // @ts-ignore
-                        localStorage.setItem("darkMode", !dark);
+                      localStorage.setItem("darkMode", !dark);
                     } else {
                       document
                         .querySelector("body")!
@@ -234,9 +232,8 @@ const Header = () => {
               </div>
             </div>
             <div
-              className={`mobile-menu-overlay d-block d-lg-none ${
-                toggle ? "show" : ""
-              }`}
+              className={`mobile-menu-overlay d-block d-lg-none ${toggle ? "show" : ""
+                }`}
               onClick={() => setToggle(false)}
             />
             <div className="mobile-menu-control-bar d-block d-xl-none">
