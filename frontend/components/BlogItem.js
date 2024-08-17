@@ -6,20 +6,20 @@ const BlogItem = ({ item }) => {
     <div className="col-lg-6" key={item.id}>
       <div className="article-publications-item">
         <div className="image">
-          <Link href="article" className="d-block w-100">
-            <Image width={0} height={0} src={item.img} alt="blog-img-1" className="img-fluid w-100" />
+          <Link href={"/posts/" + item.id} className="d-block w-100 flex align-content-center justify-content-center">
+            <Image width={0} height={0} sizes={"100vw"} src={item.meta_image} alt="blog-img-1" className="img-fluid w-100" />
           </Link>
-          <Link href="article" className="tags">
-            {item.category}
+          <Link href={"/posts/" + item.id} className="tags">
+            {item.category ? item.category.title : " "}
           </Link>
         </div>
         <div className="text">
-          <Link href="article" className="title">
+          <Link href={"/posts/" + item.id} className="title">
             {item.title}
           </Link>
           <ul className="list-unstyled">
-            <li>{item.readingTime} read</li>
-            <li>{item.date}</li>
+            <li>{item.reading_minutes} min read</li>
+            <li>{item.date_published}</li>
           </ul>
         </div>
       </div>

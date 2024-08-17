@@ -1,78 +1,28 @@
 import BlogItem from "@/components/BlogItem";
 import MeltRoadLayout from "@/layout/MeltRoadLayout";
+import { Post } from "@/types/post";
 
-export default function page() {
-  const blogItems = [
-    {
-      id: 1,
-      title: "Want To Upgrade Your Brain? Stop Doing These 7 Things",
-      img: "assets/img/blog/blog-img-1.jpg",
-      category: "Development",
-      date: "Nov 6, 2023",
-      readingTime: "15 min",
-    },
-    {
-      id: 2,
-      title: "Want To Upgrade Your Brain? Stop Doing These 7 Things",
-      img: "assets/img/blog/blog-img-2.jpg",
-      category: "Development",
-      date: "Nov 6, 2023",
-      readingTime: "15 min",
-    },
-    {
-      id: 3,
-      title: "Want To Upgrade Your Brain? Stop Doing These 7 Things",
-      img: "assets/img/blog/blog-img-3.jpg",
-      category: "Development",
-      date: "Nov 6, 2023",
-      readingTime: "15 min",
-    },
-    {
-      id: 4,
-      title: "Want To Upgrade Your Brain? Stop Doing These 7 Things",
-      img: "assets/img/blog/blog-img-4.jpg",
-      category: "Development",
-      date: "Nov 6, 2023",
-      readingTime: "15 min",
-    },
-    {
-      id: 5,
-      title: "Want To Upgrade Your Brain? Stop Doing These 7 Things",
-      img: "assets/img/blog/blog-img-5.jpg",
-      category: "Development",
-      date: "Nov 6, 2023",
-      readingTime: "15 min",
-    },
-    {
-      id: 6,
-      title: "Want To Upgrade Your Brain? Stop Doing These 7 Things",
-      img: "assets/img/blog/blog-img-6.jpg",
-      category: "Development",
-      date: "Nov 6, 2023",
-      readingTime: "15 min",
-    },
-  ];
+export default async function page() {
+  var data = await fetch(process.env.API_HOST + '/posts', { cache: 'no-store' }).then((res) =>
+    res.json()
+  )
+
   return (
     <MeltRoadLayout>
-      <div className="col-xl-8">
+      <div className="col-xl-9">
         <div className="card content-box-card">
           <div className="card-body portfolio-card">
             <div className="top-info">
               <div className="text">
                 <h1 className="main-title">
-                  My Recent Article and Publications
+                  Posts
                 </h1>
-                <p>
-                  I&apos;m here to help if you&apos;re searching for a product designer to
-                  bring your idea to life or a design partner to help take your
-                  business to the next level.
-                </p>
               </div>
             </div>
             <div className="article-publications article-area">
               <div className="article-publications-main">
                 <div className="row">
-                  {blogItems.map((item) => (
+                  {data.map((item: Post) => (
                     <BlogItem item={item} key={item.id} />
                   ))}
                 </div>

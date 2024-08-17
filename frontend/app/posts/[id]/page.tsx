@@ -5,21 +5,10 @@ import DOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 import "@css/viewer.css";
 import { Noto_Sans_KR } from "next/font/google";
+import { Post } from "@/types/post";
+
+
 const Noto = Noto_Sans_KR({ preload: false });
-
-
-type Post = {
-  id: number,
-  category: any[],
-  images: [any[]],
-  title: string,
-  slug: string,
-  content: string,
-  meta_description: string,
-  meta_image: string,
-  reading_minutes: number,
-  date_published: string
-} | null;
 
 type PostProps = {
   params: { id: string };
