@@ -183,3 +183,7 @@
     border-radius: 8px;
 }
 
+.md-contents pre {
+    margin-top: .4em;
+    margin-bottom: 1em;
+}
