@@ -7,9 +7,12 @@
     padding-right: 20px;
 }
 
+.dark-theme .md-contents {
+    color: #fafafa;
+}
+
 .md-contents {
     line-height: 2em;
-    color: #2a2a2a;
     font-weight: 400;
 }
 
@@ -27,7 +30,6 @@
 .md-contents h2,
 .md-contents h3 {
     clear: both;
-    color: #2a2a2a;
     font-weight: 800;
     margin: -.05em 0 .8em;
     padding-top: 1em;
@@ -37,7 +39,6 @@
 .md-contents h5,
 .md-contents h6 {
     clear: both;
-    color: #2a2a2a;
     font-weight: 600;
     margin: -.35em 0 .8em;
     padding-top: 1em;
@@ -85,7 +86,6 @@
     line-height: 1.7;
     font-weight: normal;
     margin: 1.2em 0 1em .75em;
-    color: #727477;
 }
 
 .md-contents blockquote p {
@@ -166,23 +166,20 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 1.4;
-    color: rgba(0, 0, 0, 0.6);
     outline: 0;
     z-index: 300;
     padding-top: 0.7em;
-    color: #727477;
 }
 
-.md-contents code {
-    font-size: 16px;
-    background: rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    white-space: pre-wrap;
+.md-contents p > code,
+.md-contents h1> code,
+.md-contents h2> code,
+.md-contents h3> code,
+.md-contents h4> code,
+.md-contents h5> code,
+.md-contents h6> code {
+    background-color: #dedede;
+    padding: 4px 6px;
+    border-radius: 8px;
 }
 
-.md-contents pre {
-    display: block;
-    background: rgba(0, 0, 0, 0.05);
-}

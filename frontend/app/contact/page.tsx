@@ -53,9 +53,9 @@ const page = () => {
                       </div>
                       <div className="col-md-12">
                         <button className="submit-btn" type="submit">
-                          Send Message
+                          Send Meeting Request
                           <svg
-                            className="icon"
+                            className="icon d-inline-block mt-[-4px]"
                             width={20}
                             height={20}
                             viewBox="0 0 20 20"

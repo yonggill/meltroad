@@ -40,7 +40,7 @@
   --dark-theme-bg: #000;
   --dark-theme-black: #0e1018;
   --dark-theme-white: #f0f2f5;
-  --dark-theme-light-white: rgba(240, 242, 245, 0.7);
+  --dark-theme-light-white: rgb(252, 252, 245);
   --paragraph: #616670;
   --background: #f0f2f5;
   --font-size: 16px;
@@ -117,7 +117,6 @@ p {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  color: var(--paragraph);
   margin: 0;
   padding: 0;
 }
@@ -2079,8 +2078,9 @@ p {
 	11. Theme Control CSS Start
 ===============================*/
 
-.dark-theme {
+body.dark-theme {
   background-color: var(--dark-theme-black);
+  color: var(dark-theme-white);
 }
 
 .dark-theme .header-area .menu-container,
